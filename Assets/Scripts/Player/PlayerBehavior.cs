@@ -75,21 +75,21 @@ public class PlayerBehavior : MonoBehaviour
         GameManager.Instance.InputManager.DisablePlayerInput();
     }
 
-    // private void Attack()
-    // {
-    //     Collider2D[] hittedEnemies = 
-    //         Physics2D.OverlapCircleAll(attackPosition.position, attackRange, attackLayer);
+    private void Attack()
+    {
+        Collider2D[] hittedEnemies = 
+            Physics2D.OverlapCircleAll(attackPosition.position, attackRange, attackLayer);
         
-    //     GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerAttack);
+        // GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerAttack);
         
-    //     foreach (Collider2D hittedEnemy in hittedEnemies)
-    //     {
-    //         if (hittedEnemy.TryGetComponent(out Health enemyHealth))
-    //         {
-    //             enemyHealth.TakeDamage();
-    //         }
-    //     }
-    // }
+        foreach (Collider2D hittedEnemy in hittedEnemies)
+        {
+            if (hittedEnemy.TryGetComponent(out Health enemyHealth))
+            {
+                enemyHealth.TakeDamage();
+            }
+        }
+    }
 
     // private void PlayWalkSound()
     // {
