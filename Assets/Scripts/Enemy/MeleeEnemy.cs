@@ -42,7 +42,6 @@ public class MeleeEnemy : BaseEnemy
         cooldownTimer = 0;
         if (CheckPlayerInDetectArea().TryGetComponent(out Health playerHealth))
         {
-            print("Making player take damage");
             playerHealth.TakeDamage();
         }
     }

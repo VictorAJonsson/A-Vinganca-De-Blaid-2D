@@ -25,7 +25,6 @@ public class PlayerAnim : MonoBehaviour
 
     private void PlayAttackAnim()
     {
-        print("attack");
         animator.SetTrigger("attack");
     }
 
