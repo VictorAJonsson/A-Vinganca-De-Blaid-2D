@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5;
-    [SerializeField] private float jumpForce = 3;
+    [SerializeField] private float jumpForce = 5;
     
     [Header("Propriedades de ataque")]
     [SerializeField] private float attackRange = 1f;
