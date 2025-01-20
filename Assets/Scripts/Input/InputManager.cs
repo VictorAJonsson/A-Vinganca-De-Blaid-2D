@@ -8,7 +8,7 @@ public class InputManager
     public float Movement => playerControls.Gameplay.Movement.ReadValue<float>();
 
     public event Action OnJump;
-    public event Action OnAttack;
+    public event Action OnAttack; 
 
     public InputManager()
     {

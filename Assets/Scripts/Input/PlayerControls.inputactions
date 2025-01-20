@@ -3,12 +3,12 @@
     "maps": [
         {
             "name": "Gameplay",
-            "id": "00e4662d-9b44-4477-ae78-8840e11ff3af",
+            "id": "26b706b1-f339-4246-8b63-0bce1f943ba8",
             "actions": [
                 {
                     "name": "Movement",
                     "type": "Value",
-                    "id": "4ebc1c44-e104-48b2-af93-b8f96e6341a2",
+                    "id": "74d7dfa0-940c-49e6-aa0d-2965c73bfc95",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
@@ -17,8 +17,8 @@
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "dbc93a1f-abd8-46f1-976d-add9a3116f91",
-                    "expectedControlType": "",
+                    "id": "f4ba15d9-2d4b-4142-ae16-bf3f79edca67",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -26,8 +26,8 @@
                 {
                     "name": "Attack",
                     "type": "Button",
-                    "id": "ee605195-f6ab-4c19-8ad3-d3fe644f2d76",
-                    "expectedControlType": "",
+                    "id": "10b50ff4-3431-429a-a4d4-9de0688ec617",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -35,8 +35,8 @@
             ],
             "bindings": [
                 {
-                    "name": "[Arrow] Left/Right Arrow",
-                    "id": "e83c23d2-d82c-4155-a71c-23cd67db6fb3",
+                    "name": "[Arrows] Left/Right Arrow",
+                    "id": "deb2602c-470c-4045-b555-296ee4c3d144",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -47,7 +47,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "9378ae6d-459c-41a2-ae0c-40c94b5bc3fb",
+                    "id": "b683a3b0-bb12-473c-a599-335da559cfcf",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -58,7 +58,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "065a6374-3ddd-40f3-95ff-a4a10e73c83d",
+                    "id": "828c4e2c-57b1-4293-881b-ef5013af9447",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -69,7 +69,18 @@
                 },
                 {
                     "name": "",
-                    "id": "cf454d03-6c07-4f61-ba20-942ac398f21a",
+                    "id": "41a006b3-7d91-4460-ba61-f8b169345e35",
+                    "path": "<Gamepad>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cd26523-966f-45da-9643-82399baf0502",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
@@ -80,7 +91,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c308fdc1-e0e0-42b6-afb0-021e8b8f1977",
+                    "id": "2141f40a-97d3-4782-9c3e-185f9776ba31",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
@@ -91,7 +102,7 @@
                 },
                 {
                     "name": "",
-                    "id": "7e73ea83-ca90-4943-a775-a6477ddd02ee",
+                    "id": "b05781a8-aae8-4e8d-8f5d-ae49b0161dd9",
                     "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",

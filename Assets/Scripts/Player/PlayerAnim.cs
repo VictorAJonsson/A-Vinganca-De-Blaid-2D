@@ -11,9 +11,10 @@ public class PlayerAnim : MonoBehaviour
         animator = GetComponent<Animator>();
         groundedChecker = GetComponent<IsGroundedChecker>();
         playerHealth = GetComponent<Health>();
+
+        GameManager.Instance.InputManager.OnAttack += PlayAttackAnim;
         playerHealth.OnHurt += PlayHurtAnim;
         playerHealth.OnDead += PlayDeadAnim;
-        GameManager.Instance.InputManager.OnAttack += PlayAttackAnim;
     }
 
     private void Update()

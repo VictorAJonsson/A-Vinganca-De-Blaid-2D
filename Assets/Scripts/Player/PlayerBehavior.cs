@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5;
-    [SerializeField] private float jumpForce = 5;
+    [SerializeField] private float jumpForce = 3;
     
     [Header("Propriedades de ataque")]
     [SerializeField] private float attackRange = 1f;
@@ -13,16 +13,16 @@ public class PlayerBehavior : MonoBehaviour
 
     private float moveDirection;
 
-    private Rigidbody2D Rigidbody2D;
+    private Rigidbody2D rigidbody2d;
     private Health health;
     private IsGroundedChecker isGroundedCheker;
 
     private void Awake()
     {        
-        Rigidbody2D = GetComponent<Rigidbody2D>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
         isGroundedCheker = GetComponent<IsGroundedChecker>();
         health = GetComponent<Health>();
-        // health.OnHurt += PlayHurtAudio;
+        health.OnHurt += PlayHurtAudio;
         health.OnDead += HandlePlayerDeath;
     }
 
@@ -58,20 +58,20 @@ public class PlayerBehavior : MonoBehaviour
     private void HandleJump()
     {
         if (isGroundedCheker.IsGrounded() == false) return;
-        Rigidbody2D.linearVelocity += Vector2.up * jumpForce;
-        // GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerJump);
+        rigidbody2d.linearVelocity += Vector2.up * jumpForce;
+        GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerJump);
     }
 
-    // private void PlayHurtAudio()
-    // {
-    //     GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerHurt);
-    // }
+    private void PlayHurtAudio()
+    {
+        GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerHurt);
+    }
 
     private void HandlePlayerDeath()
     {
         GetComponent<Collider2D>().enabled = false;
-        Rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-        // GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerDeath);
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerDeath);
         GameManager.Instance.InputManager.DisablePlayerInput();
     }
 
@@ -80,7 +80,7 @@ public class PlayerBehavior : MonoBehaviour
         Collider2D[] hittedEnemies = 
             Physics2D.OverlapCircleAll(attackPosition.position, attackRange, attackLayer);
         
-        // GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerAttack);
+        GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerAttack);
         
         foreach (Collider2D hittedEnemy in hittedEnemies)
         {
@@ -91,10 +91,10 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
-    // private void PlayWalkSound()
-    // {
-    //     GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerWalk);
-    // }
+    private void PlayWalkSound()
+    {
+        GameManager.Instance.AudioManager.PlaySFX(SFX.PlayerWalk);
+    }
 
     private void OnDrawGizmos()
     {
